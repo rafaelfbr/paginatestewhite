@@ -1,0 +1,266 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/landing.css';
+---
+
+<Layout 
+	title="White | Minimalismo & Performance Excepcional" 
+	description="Esta página é a white. Uma demonstração de design premium minimalista, com carregamento instantâneo, otimização de SEO e total conformidade com as diretrizes modernas da web."
+>
+	<!-- Header -->
+	<header class="header">
+		<div class="container header-container">
+			<a href="#" class="logo" id="header-logo">
+				<span class="logo-dot"></span>
+				<span class="logo-text">WHITE</span>
+			</a>
+			<nav class="nav-menu" id="header-nav">
+				<a href="#inicio" class="nav-link">Início</a>
+				<a href="#beneficios" class="nav-link">Diferenciais</a>
+				<a href="#tecnologia" class="nav-link">Tecnologia</a>
+				<a href="#sobre" class="nav-link">Sobre</a>
+			</nav>
+			<div class="header-actions">
+				<a href="#contato" class="btn btn-secondary" id="btn-header-cta" style="padding: 0.5rem 1.25rem; font-size: 0.875rem;">Falar com Especialista</a>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<!-- Hero Section -->
+		<section id="inicio" class="hero-section">
+			<div class="hero-bg-shapes">
+				<div class="shape shape-1"></div>
+				<div class="shape shape-2"></div>
+			</div>
+			
+			<div class="container hero-container animate-fade-in">
+				<div class="badge">
+					<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="badge-icon"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+					TECNOLOGIA DE ALTA CONVERSÃO
+				</div>
+				
+				<h1 class="hero-title" id="main-heading">
+					Esta página é a <span class="gradient-text">white</span>
+				</h1>
+				
+				<p class="hero-subtitle">
+					Uma experiência de navegação premium focada em carregamento instantâneo, estética minimalista e total conformidade. Desenvolvida em Astro para garantir o máximo desempenho e a melhor experiência para o usuário.
+				</p>
+				
+				<div class="hero-actions-container">
+					<a href="#beneficios" class="btn btn-primary" id="btn-hero-primary">Conhecer Diferenciais</a>
+					<a href="#tecnologia" class="btn btn-secondary" id="btn-hero-secondary">Explorar Tecnologia</a>
+				</div>
+				
+				<div class="hero-metrics">
+					<div class="metric-item">
+						<span class="metric-value">100%</span>
+						<span class="metric-label">Performance Core Web Vitals</span>
+					</div>
+					<div class="metric-divider"></div>
+					<div class="metric-item">
+						<span class="metric-value">&lt; 0.3s</span>
+						<span class="metric-label">Tempo de Carregamento</span>
+					</div>
+					<div class="metric-divider"></div>
+					<div class="metric-item">
+						<span class="metric-value">SEO</span>
+						<span class="metric-label">Otimização Total</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Benefícios Section -->
+		<section id="beneficios" class="beneficios-section">
+			<div class="container">
+				<div class="section-header">
+					<span class="section-tag animate-tag">POR QUE WHITE?</span>
+					<h2 class="section-title" id="benefits-heading">Os pilares da nossa arquitetura limpa</h2>
+					<p class="section-subtitle">Simplicidade não é sobre a ausência de elementos, mas sobre a presença marcante do que é essencial.</p>
+				</div>
+				
+				<div class="grid-benefits">
+					<!-- Card 1 -->
+					<div class="glass-card benefit-card">
+						<div class="card-icon-container">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path><path d="m5 3 1 2.5L8.5 6 6 7 5 9.5 4 7 1.5 6 4 5.5z"></path><path d="m19 17 1 2.5 2.5.5-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1z"></path></svg>
+						</div>
+						<h3 class="card-title">Estética Minimalista</h3>
+						<p class="card-desc">Interface focada na clareza visual, com tipografia harmônica e amplo respiro, proporcionando uma experiência de leitura limpa e extremamente agradável.</p>
+					</div>
+
+					<!-- Card 2 -->
+					<div class="glass-card benefit-card">
+						<div class="card-icon-container">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+						</div>
+						<h3 class="card-title">Desempenho Ultra-Rápido</h3>
+						<p class="card-desc">Graças ao framework Astro, entregamos HTML puro e estático para o navegador. Isso elimina scripts desnecessários e garante que a página abra em frações de segundo.</p>
+					</div>
+
+					<!-- Card 3 -->
+					<div class="glass-card benefit-card">
+						<div class="card-icon-container">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+						</div>
+						<h3 class="card-title">Conformidade e Segurança</h3>
+						<p class="card-desc">Estrutura 100% alinhada com as políticas exigidas pelas principais redes de tráfego pago (Google Ads, Facebook Ads). Menos rejeição, mais estabilidade para seus anúncios.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Tecnologia Section (Duas Colunas) -->
+		<section id="tecnologia" class="tecnologia-section">
+			<div class="container grid-two-columns">
+				<div class="column-text">
+					<span class="section-tag">TECNOLOGIA DE PONTA</span>
+					<h2 class="section-title-left" id="tech-heading">Desenvolvido com o que há de melhor no ecossistema moderno</h2>
+					<p class="section-desc-left">
+						Nossa White Page é construída com <strong>Astro v5</strong>, a ferramenta líder para a criação de sites rápidos e orientados a conteúdo. Ao gerar páginas estáticas diretamente no servidor (SSG), removemos o processamento pesado do dispositivo do usuário.
+					</p>
+					<div class="features-list">
+						<div class="feature-list-item">
+							<span class="check-icon">✓</span>
+							<div>
+								<strong>Zero Javascript por Padrão:</strong> Menos código transferido significa carregamento mais rápido no mobile.
+							</div>
+						</div>
+						<div class="feature-list-item">
+							<span class="check-icon">✓</span>
+							<div>
+								<strong>SEO Otimizado nativamente:</strong> Tags estruturadas corretamente facilitam a leitura por robôs e algoritmos.
+							</div>
+						</div>
+						<div class="feature-list-item">
+							<span class="check-icon">✓</span>
+							<div>
+								<strong>Estilo Encapsulado:</strong> Estilização robusta e focada para garantir consistência visual perfeita.
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="column-visual">
+					<div class="visual-wrapper">
+						<div class="visual-card glass-card">
+							<div class="visual-header">
+								<span class="dot-btn red"></span>
+								<span class="dot-btn yellow"></span>
+								<span class="dot-btn green"></span>
+								<span class="visual-address">https://white.page/status</span>
+							</div>
+							<div class="visual-body">
+								<div class="visual-line"><span class="code-comment">// Tecnologia limpa e transparente</span></div>
+								<div class="visual-line"><span class="code-keyword">const</span> <span class="code-var">page</span> = {"{"}</div>
+								<div class="visual-line indent"><span class="code-prop">type</span>: <span class="code-string">"White Page"</span>,</div>
+								<div class="visual-line indent"><span class="code-prop">isOptimized</span>: <span class="code-bool">true</span>,</div>
+								<div class="visual-line indent"><span class="code-prop">performance</span>: <span class="code-number">100</span>,</div>
+								<div class="visual-line indent"><span class="code-prop">framework</span>: <span class="code-string">"Astro"</span></div>
+								<div class="visual-line">{"}"};</div>
+							</div>
+						</div>
+						<div class="visual-blob"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Sobre Section -->
+		<section id="sobre" class="sobre-section">
+			<div class="container">
+				<div class="sobre-box glass-card text-center">
+					<h2 id="about-heading">Compromisso com a transparência</h2>
+					<p class="sobre-text">
+						Acreditamos que a simplicidade é o último grau de sofisticação. Esta página é a representação física dessa filosofia: uma página "white", limpa e honesta que atende às expectativas de segurança dos usuários e fornece exatamente as informações necessárias de forma clara, objetiva e transparente.
+					</p>
+					<a href="#contato" class="btn btn-primary" id="btn-sobre-cta">Entre em Contato Conosco</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Formulário de Contato -->
+		<section id="contato" class="contato-section">
+			<div class="container">
+				<div class="section-header text-center">
+					<span class="section-tag">FALE CONOSCO</span>
+					<h2 class="section-title" id="contact-heading">Tem alguma dúvida sobre nossas soluções?</h2>
+					<p class="section-subtitle">Preencha o formulário abaixo e nossa equipe entrará em contato em menos de 24 horas.</p>
+				</div>
+
+				<div class="form-wrapper glass-card">
+					<form id="contact-form">
+						<div class="form-grid">
+							<div class="form-group">
+								<label for="name">Seu Nome</label>
+								<input type="text" id="name" required placeholder="Ex: Rafael Silva" />
+							</div>
+							<div class="form-group">
+								<label for="email">Seu E-mail</label>
+								<input type="email" id="email" required placeholder="Ex: rafael@exemplo.com" />
+							</div>
+						</div>
+						<div class="form-group" style="margin-top: 1.5rem;">
+							<label for="message">Mensagem</label>
+							<textarea id="message" rows="4" required placeholder="Como podemos te ajudar?"></textarea>
+						</div>
+						<button type="submit" class="btn btn-primary btn-block" id="btn-submit-form" style="margin-top: 1.5rem; width: 100%;">
+							Enviar Mensagem
+						</button>
+					</form>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-top">
+				<div class="footer-brand">
+					<a href="#" class="logo">
+						<span class="logo-dot"></span>
+						<span class="logo-text">WHITE</span>
+					</a>
+					<p class="footer-tagline">Simplicidade, transparência e performance em harmonia.</p>
+				</div>
+				<div class="footer-links-grid">
+					<div class="footer-column">
+						<h4>Navegação</h4>
+						<a href="#inicio">Início</a>
+						<a href="#beneficios">Diferenciais</a>
+						<a href="#tecnologia">Tecnologia</a>
+					</div>
+					<div class="footer-column">
+						<h4>Legal</h4>
+						<a href="#" id="link-privacy">Políticas de Privacidade</a>
+						<a href="#" id="link-terms">Termos de Uso</a>
+						<a href="#" id="link-cookies">Políticas de Cookies</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="footer-bottom">
+				<p>© 2026 WHITE. Todos os direitos reservados. Esta página é a white.</p>
+				<p style="font-size: 0.75rem; color: var(--text-tertiary); margin-top: 0.5rem;">
+					Isenção de Responsabilidade: Os serviços oferecidos nesta página são demonstrativos de tecnologia de alta performance e design minimalista.
+				</p>
+			</div>
+		</div>
+	</footer>
+</Layout>
+
+<script>
+	// Lógica do lado do cliente estruturada e em conformidade com o Astro
+	const form = document.getElementById('contact-form');
+	if (form) {
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
+			alert('Mensagem enviada com sucesso! (Demonstração)');
+			if (form instanceof HTMLFormElement) {
+				form.reset();
+			}
+		});
+	}
+</script>
