@@ -72,21 +72,47 @@ Stack: **Astro estático** servido via **proxy reverso no Cloudflare Worker (shi
 - Nada de jQuery, libs de animação pesadas, sliders gigantes. CSS resolve a
   maioria das animações (`@keyframes`, `transition`).
 
-## 6. HTML enxuto
+## 6. Animações e paint (não derrubar LCP/SI)
+
+- **Anime apenas `transform` e `opacity`.** São compostas na GPU e não forçam
+  layout. **Nunca** anime `border-radius`, `width`, `height`, `top`, `left`,
+  `margin`, `box-shadow` — disparam reflow/repaint a cada frame e travam o
+  carregamento em celular fraco (foi o que segurou o LCP/SI desta página).
+- **Nada de entrada com `opacity: 0` + fade-in em conteúdo acima da dobra.** Se o
+  herói começa invisível e só aparece via animação, o FCP/LCP esperam a animação
+  começar. Conteúdo crítico nasce visível.
+- **`backdrop-filter: blur()` é caro** em GPU mobile. Use com parcimônia (poucos
+  elementos, e nunca em algo grande acima da dobra). Prefira um fundo
+  semitransparente sólido quando der.
+
+## 7. HTML enxuto
 
 - Mantenha o HTML pequeno (alvo < 30KB). Quanto menor, mais rápido chega e pinta.
 - Evite blocos de SVG inline gigantes repetidos; reuse via `<use>` ou componente.
 
-## 7. Proxy / Worker (cache de borda)
+## 8. Publicação e deploy (a pegadinha do hash)
 
-- O shield worker cacheia na borda da Cloudflare os **assets** (`/_astro/*`,
-  fontes, imagens) e a **página safe**, eliminando o hop até a origem no TTFB.
-- Para o cache funcionar bem, **mantenha nomes de arquivo com hash de conteúdo**
-  (padrão do Astro em `/_astro/`). Não use `?v=` para cache-busting.
-- A página real (lead) recebe telemetria por sessão e **não** é cacheada — isso
-  é esperado.
+- O `safe_origin` / `real_origin` da página (no painel) é o que o worker busca.
+  **Aponte para o alias de produção `projeto.pages.dev`, NUNCA para a URL com
+  hash do deployment** (`https://<hash>.projeto.pages.dev`).
+- Por quê: o alias sempre serve o último deploy de produção. Se você fixar um
+  hash, todo `git push` cria um deploy novo (hash novo) e o site continua
+  servindo o build antigo até você re-publicar com o hash novo — exatamente o que
+  derruba seu re-teste.
+- Com o alias: `git push` → Pages builda → o site novo entra **sozinho**, sem
+  re-publicar.
 
-## 8. Checklist antes de publicar
+## 9. Proxy / Worker (cache de borda)
+
+- O shield worker cacheia na borda só os **assets** (`/_astro/*`, fontes,
+  imagens) — eles têm hash no nome, então uma republicação gera URLs novas e
+  nunca serve conteúdo stale.
+- O **HTML não é cacheado** (sempre fresco): republicações aparecem na hora.
+- Mantenha os nomes de arquivo com hash de conteúdo (padrão do Astro em
+  `/_astro/`). Não use `?v=` para cache-busting.
+- A página real (lead) recebe telemetria por sessão e nunca é cacheada.
+
+## 10. Checklist antes de publicar
 
 - [ ] `astro.config.mjs` com `output: 'static'`, `compressHTML: true`,
       `inlineStylesheets: 'always'`.
@@ -94,7 +120,11 @@ Stack: **Astro estático** servido via **proxy reverso no Cloudflare Worker (shi
       (`dist/index.html`).
 - [ ] Nenhum `<link rel="stylesheet">` externo no `<head>` do build.
 - [ ] Fonte self-hosted em `/_astro/*.woff2` com `font-display: swap`.
+- [ ] Nenhuma animação de `border-radius`/layout; nada de fade-in escondendo a
+      dobra; `backdrop-filter: blur` só se necessário.
 - [ ] Imagens com dimensões, lazy abaixo da dobra, LCP com `fetchpriority="high"`.
+- [ ] No painel, `safe_origin`/`real_origin` apontam para o **alias**
+      `projeto.pages.dev` (sem hash de deployment).
 - [ ] Medir no **PageSpeed Insights / Lighthouse em modo Mobile** (throttled) —
       é onde o FCP aperta.
 
